@@ -491,7 +491,7 @@ function App(){
             <div className="couple-card__frame">
               <div className="couple-card__arch">
                 <img 
-                  src="/assets/sumukh.png" 
+                  src="/assets/groom.jpg" 
                   alt="Sumukh C - The Groom" 
                   className="couple-card__photo" 
                 />
@@ -514,7 +514,7 @@ function App(){
             <div className="couple-card__frame">
               <div className="couple-card__arch">
                 <img 
-                  src="/assets/vismayi.png" 
+                  src="/assets/bride.jpg" 
                   alt="Vismayi Venkataramu - The Bride" 
                   className="couple-card__photo" 
                 />
