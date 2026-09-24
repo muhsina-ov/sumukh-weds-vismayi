@@ -412,7 +412,18 @@ function App(){
   return (
     <main>
       {/* Background Audio */}
-      <audio ref={audioRef} src="/assets/music.mp3" loop preload="auto" />
+      <audio 
+        ref={audioRef} 
+        src="/assets/music.mp3" 
+        loop 
+        preload="auto" 
+        onEnded={() => {
+          if (audioRef.current && musicPlaying) {
+            audioRef.current.currentTime = 0;
+            audioRef.current.play().catch(() => {});
+          }
+        }}
+      />
 
       <LivingDetails/>
       {opened && <FloatingLayer/>}
@@ -489,11 +500,16 @@ function App(){
           {/* Groom Card */}
           <Reveal className="couple-card">
             <div className="couple-card__frame">
-              <div className="couple-card__arch">
+              <div className="couple-card__arch couple-card__arch--groom">
+                <div 
+                  className="couple-card__ambient-bg" 
+                  style={{ backgroundImage: 'url(/assets/groom.jpg)' }} 
+                  aria-hidden="true" 
+                />
                 <img 
                   src="/assets/groom.jpg" 
                   alt="Sumukh C - The Groom" 
-                  className="couple-card__photo" 
+                  className="couple-card__photo couple-card__photo--groom" 
                 />
               </div>
               <div className="couple-badge">The Groom</div>
