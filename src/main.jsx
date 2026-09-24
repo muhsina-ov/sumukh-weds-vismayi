@@ -280,7 +280,7 @@ function ScratchDate(){
             <small>Friday</small>
             <strong>30</strong>
             <span>October · 2026</span>
-            <i>Billava Bhavana · Bengaluru</i>
+            <i>Bengaluru</i>
           </div>
           <canvas 
             ref={canvas} 
@@ -320,18 +320,18 @@ const events=[
   {
     name: 'Muhurtham',
     lagna: 'Dhanur Lagna',
-    date: 'Friday, 30 Oct 2026',
+    date: '30.10.2026 , Friday',
     time: '9:15 AM to 10:19 AM',
-    place: '"Billava Bhavana" (Devaki Ananda Suvarna Convention Hall)',
+    place: 'Devaki Ananda Suvarna Convention Hall',
     mark: 'wedding',
     detail: 'Auspicious Muhurtham ceremony in Dhanur lagna. We request your presence to shower your blessings on the couple.'
   },
   {
     name: 'Reception',
     lagna: 'Evening Celebration',
-    date: 'Friday, 30 Oct 2026',
+    date: '30.10.2026 , Friday',
     time: '7:00 PM onwards',
-    place: '"Billava Bhavana" (Devaki Ananda Suvarna Convention Hall)',
+    place: 'Devaki Ananda Suvarna Convention Hall',
     mark: 'reception',
     detail: 'Join us to celebrate the beginning of their journey together with dinner, music, and fond memories.'
   }
@@ -349,7 +349,7 @@ function CalendarButton(){
       'DTSTART:20261030T034500Z',
       'DTEND:20261030T163000Z',
       'SUMMARY:Sumukh & Vismayi | Wedding Celebration',
-      'LOCATION:Billava Bhavana (Devaki Ananda Suvarna Convention Hall), Bannerughatta road, Hulimavu, Bengaluru',
+      'LOCATION:Devaki Ananda Suvarna Convention Hall, Bannerughatta road, Hulimavu, Bengaluru',
       'DESCRIPTION:Wedding of Sumukh C and Vismayi Venkataramu. Muhurtham: 9:15 AM - 10:19 AM | Reception: 7:00 PM onwards.',
       'END:VEVENT',
       'END:VCALENDAR'
@@ -540,10 +540,12 @@ function App(){
             <p className="kicker">With warm affection &amp; blessings</p>
             <h3>Awaiting your gracious presence:</h3>
             <div className="presence-names-list">
-              <p className="presence-main-name">Smt. Shashikala M.S and Sri. Channakeshava H.S</p>
+              <p className="presence-main-name">
+                Smt. Shashikala M.S and<br />
+                <span className="nowrap-name">Sri. Channakeshava H.S</span>
+              </p>
               <p className="presence-sub-name">Kum. Namitha C</p>
             </div>
-            <p className="presence-footer-text">&amp; Near and Dear Ones</p>
           </div>
         </Reveal>
       </section>
@@ -603,8 +605,11 @@ function App(){
                     <h3>{e.name}</h3>
                     <span className="event-lagna-badge">{e.lagna}</span>
                   </div>
-                  <p>{e.date} · {e.time}</p>
-                  <span>{e.place}</span>
+                  <div className="event-datetime-row">
+                    <span className="event-date-highlight">{e.date}</span>
+                    <span className="event-time-highlight">{e.time}</span>
+                  </div>
+                  <span className="event-place-text">{e.place}</span>
                   {activeEvent===i&&(
                     <motion.div 
                       className="event__detail" 
@@ -629,10 +634,10 @@ function App(){
         <Reveal className="venue__card">
           <div className="map map--google">
             <iframe 
-              title="Google Map showing Billava Bhavana in Bengaluru" 
+              title="Google Map showing Devaki Ananda Suvarna Convention Hall in Bengaluru" 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade" 
-              src="https://www.google.com/maps?q=Billava+Bhavana+Bannerghatta+Road+Hulimavu+Bengaluru&z=15&output=embed" 
+              src="https://www.google.com/maps?q=Devaki+Ananda+Suvarna+Convention+Hall+Bannerghatta+Road+Hulimavu+Bengaluru&z=15&output=embed" 
             />
             <div className="map__tint" aria-hidden="true">
               <span className="pin"><Lotus small/></span>
@@ -641,8 +646,8 @@ function App(){
           </div>
           <div className="venue__copy">
             <p className="kicker">The Venue</p>
-            <h2>"Billava Bhavana"</h2>
-            <p className="venue-hall-sub">(Devaki Ananda Suvarna Convention Hall)</p>
+            <h2>"Devaki Ananda Suvarna Convention Hall"</h2>
+            <p className="venue-hall-sub">Billava Bhavana</p>
             <p className="venue-address">
               Next to Royal Meenakshi Mall,<br/>
               Bannerughatta Road, Hulimavu,<br/>
@@ -650,7 +655,7 @@ function App(){
             </p>
             <a 
               className="button" 
-              href="https://www.google.com/maps/search/?api=1&query=Billava+Bhavana+Bannerughatta+Road+Hulimavu+Bengaluru" 
+              href="https://maps.app.goo.gl/mVE15PQscWs1yWLJ8?g_st=aw" 
               target="_blank" 
               rel="noreferrer"
             >
