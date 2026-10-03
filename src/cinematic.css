@@ -40,13 +40,13 @@
 .couple-grid{display:grid;gap:26px;max-width:720px;margin:0 auto}
 @media(min-width:700px){.couple-grid{grid-template-columns:1fr 1fr;gap:30px}}
 .couple-card{background:#fffdf2;border:1px solid rgba(216,154,43,.45);box-shadow:0 22px 55px rgba(48,68,22,.16);overflow:hidden}
-.couple-card__frame{position:relative;padding:18px 18px 0;background:radial-gradient(circle at 50% 0%,#fff6da,#efe9cb)}
+.couple-card__frame{position:relative;padding:18px 18px 6px;background:radial-gradient(circle at 50% 0%,#fff6da,#efe9cb)}
 .couple-card__arch{position:relative;overflow:hidden;border:1px solid rgba(216,154,43,.6);border-radius:999px 999px 16px 16px;background:radial-gradient(circle at 50% 30%,#fff7dc,#e5dcba);height:390px;display:flex;align-items:center;justify-content:center}
 .couple-card__ambient-bg{position:absolute;inset:-18px;background-size:cover;background-position:center;filter:blur(24px) brightness(.92) saturate(1.15);transform:scale(1.2);opacity:.85;pointer-events:none}
 .couple-card__photo{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
-.couple-card__photo--groom{object-fit:contain;object-position:center;max-height:100%;max-width:100%;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 4%,black 96%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,black 4%,black 96%,transparent 100%)}
-.couple-badge{position:absolute;left:50%;bottom:-13px;transform:translateX(-50%);background:var(--leaf);color:#fff8df;font-size:9px;letter-spacing:.22em;text-transform:uppercase;padding:7px 16px;border-radius:14px;border:1px solid rgba(216,154,43,.7);white-space:nowrap}
-.couple-card__info{padding:30px 22px 28px}
+.couple-card__photo--groom{object-fit:cover;object-position:center 15%;width:100%;height:100%;-webkit-mask-image:none;mask-image:none}
+.couple-badge{position:absolute;left:50%;bottom:-15px;transform:translateX(-50%);z-index:10;background:var(--leaf);color:#fff8df;font-size:9.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;padding:8px 18px;border-radius:18px;border:1.5px solid rgba(216,154,43,.85);box-shadow:0 4px 14px rgba(25,43,8,.35);white-space:nowrap}
+.couple-card__info{padding:34px 22px 28px}
 .couple-card__info h3{font-size:33px;line-height:1;color:var(--leaf)}
 .couple-card__parentage{margin:12px 0 0;display:flex;flex-direction:column;gap:2px;font-size:12px;letter-spacing:.04em;color:#4b5b29}
 .relation-label{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--pink);font-weight:600}
@@ -74,6 +74,6 @@
 .venue__copy h2{font-size:clamp(25px,5.2vw,36px)!important;line-height:1.18!important;margin-bottom:6px!important}
 .venue-hall-sub{font-style:italic!important;color:#4c5c24!important;font-size:21px!important;font-family:'Cormorant Garamond',serif!important;font-weight:600!important;margin-top:2px!important;letter-spacing:.02em!important}
 .venue-address{line-height:1.7!important}
-.footer__couple-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.footer-date-tag{display:inline-block;margin-top:14px;padding:8px 18px;border:1px solid rgba(255,248,223,.5);border-radius:18px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;background:rgba(20,38,6,.55);backdrop-filter:blur(8px)}
+.footer__couple-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+.footer-date-tag{display:inline-block;margin:4px 0 14px;padding:7px 18px;border:1px solid rgba(255,248,223,.45);border-radius:18px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;background:rgba(20,38,6,.65);backdrop-filter:blur(8px);color:#fff8df}
 

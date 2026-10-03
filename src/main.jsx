@@ -386,6 +386,34 @@ function App(){
     }
   }, [opened])
 
+  // Automatically stop audio when user switches tabs, leaves the page, or closes the link/app
+  useEffect(() => {
+    const handleStopAudio = () => {
+      if (audioRef.current) {
+        audioRef.current.pause()
+        setMusicPlaying(false)
+      }
+    }
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        handleStopAudio()
+      }
+    }
+
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+    window.addEventListener('pagehide', handleStopAudio)
+    window.addEventListener('beforeunload', handleStopAudio)
+    window.addEventListener('unload', handleStopAudio)
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+      window.removeEventListener('pagehide', handleStopAudio)
+      window.removeEventListener('beforeunload', handleStopAudio)
+      window.removeEventListener('unload', handleStopAudio)
+    }
+  }, [])
+
   const handleOpenInvitation = () => {
     setOpened(true)
     if (audioRef.current) {
@@ -449,7 +477,6 @@ function App(){
           animate={{opacity:opened?1:0}} 
           transition={{delay:.25,duration:.9}}
         >
-          <p className="eyebrow">Together with our families</p>
           <h1><span>Sumukh</span><i>&</i><span>Vismayi</span></h1>
           <div className="date-rule"><b />30 · 10 · 2026<b /></div>
           <p className="hero__note">We found home in one another.<br/>Come celebrate our forever.</p>
@@ -702,18 +729,7 @@ function App(){
           href="https://www.instagram.com/invitestory.in/" 
           target="_blank" 
           rel="noreferrer" 
-          style={{
-            position:'relative',
-            zIndex:2,
-            display:'block',
-            textAlign:'center',
-            fontSize:'8.5px',
-            textTransform:'uppercase',
-            letterSpacing:'.18em',
-            color:'rgba(255,248,223,.55)',
-            textDecoration:'none',
-            paddingBottom:'22px'
-          }}
+          className="footer__insta-link"
         >
           Follow @invitestory.in on Instagram
         </a>
