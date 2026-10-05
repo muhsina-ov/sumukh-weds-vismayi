@@ -157,10 +157,9 @@ function Opening({onOpen}) {
               <span className="opening__tap-hint">Tap to open</span>
             </div>
 
-            {/* Scroll indicator at the bottom of slide 1 (Opening) */}
+            {/* Bottom hint at the bottom of slide 1 (Opening) */}
             <div className="opening__bottom-hint" onClick={handleStart}>
-              <span>Scroll down or tap to enter</span>
-              <div className="scroll-chevron">↓</div>
+              <span>Tap to enter</span>
             </div>
           </motion.div>
         )}
